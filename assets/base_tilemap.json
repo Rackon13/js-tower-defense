@@ -1,0 +1,48 @@
+{ "compressionlevel":-1,
+ "height":8,
+ "infinite":false,
+ "layers":[
+        {
+         "data":[93, 94, 95, 130, 130, 130, 130, 130, 130, 130,
+            93, 94, 96, 71, 71, 71, 71, 71, 72, 130,
+            93, 94, 94, 94, 94, 94, 94, 94, 95, 130,
+            116, 117, 117, 117, 117, 117, 74, 94, 95, 130,
+            130, 130, 130, 130, 130, 130, 93, 94, 95, 130,
+            130, 130, 130, 130, 130, 130, 93, 94, 95, 130,
+            130, 130, 130, 130, 130, 130, 93, 94, 95, 130,
+            130, 130, 130, 130, 130, 130, 93, 94, 95, 130],
+         "height":8,
+         "id":1,
+         "name":"Base",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":10,
+         "x":0,
+         "y":0
+        }],
+ "nextlayerid":2,
+ "nextobjectid":1,
+ "orientation":"orthogonal",
+ "renderorder":"right-down",
+ "tiledversion":"1.8.4",
+ "tileheight":64,
+ "tilesets":[
+        {
+         "columns":23,
+         "firstgid":1,
+         "image":"..\/..\/Tower Defense (top-down)\/Tilesheet\/towerDefense_tilesheet.png",
+         "imageheight":832,
+         "imagewidth":1472,
+         "margin":0,
+         "name":"towerDefense_tilesheet",
+         "spacing":0,
+         "tilecount":299,
+         "tileheight":64,
+         "tilewidth":64
+        }],
+ "tilewidth":64,
+ "type":"map",
+ "version":"1.8",
+ "width":10
+}
