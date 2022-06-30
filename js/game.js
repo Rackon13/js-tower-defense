@@ -15,6 +15,7 @@ var config = {
 };
 
 var game = new Phaser.Game(config);
+<<<<<<< HEAD
 
 //################################################################################################################
 //Variaveis
@@ -29,9 +30,20 @@ var inimigos_derrotados = 0;
 var tipodeturret=0; //Tipo da torre selecionada pelo player
 var turretpreco=10; //Preço da torre
 var vidajogador=5; //Vida do Player
+=======
+var path;
+var turrets;
+var enemies;
+var credito = 25;
+var inimigos_derrotados = 0;
+var tipodeturret=0;
+var turretpreco=10;
+var vidajogador=3;
+>>>>>>> 4add58c (New changes)
 
 var ENEMY_SPEED = 1/20000; // Velocidade dos inimigos
 
+<<<<<<< HEAD
 //var BULLET_DAMAGE = 100;//Math.floor(Math.random() * 5) + 20;;
 
 
@@ -61,6 +73,31 @@ function preload() {
     this.load.image('bullet', 'assets/bullet.png'); //bala das torres
     this.load.image('map', 'assets/towerDefense_tilesheet.png'); //tileset para o tilemap
     this.load.tilemapTiledJSON('tilemap', 'assets/base_tilemap2.json') //tilemap
+=======
+var BULLET_DAMAGE = 100;//Math.floor(Math.random() * 5) + 20;;
+
+var map =  [[ 2,-1, 0, 0, 0, 0, 0, 0, 0, 0],
+            [ 2,-1, 0, 0, 0, 0, 0, 0, 0, 0],
+            [ 2,-1,-1,-1,-1,-1,-1,-1, 0, 0],
+            [ 2, 2, 2, 2, 2, 2, 2,-1, 0, 0],
+            [ 0, 0, 0, 0, 0, 0, 2,-1, 0, 0],
+            [ 0, 0, 0, 0, 0, 0, 2,-1, 0, 0],
+            [ 0, 0, 0, 0, 0, 0, 2,-1, 0, 0],
+            [ 0,-1,-1,-1,-1,-1,-1,-1, 0, 0],
+            [ 2,-1, 0, 0, 0, 0, 0, 0, 0, 0],
+            [ 2,-1, 0, 0, 0, 0, 0, 0, 0, 0],
+            [ 2,-1, 0, 0, 0, 0, 0, 0, 0, 0],
+            [ 2,-1,-1,-1,-1,-1,-1,-1,-1, 0],
+            [ 0, 0, 0, 0, 0, 0, 0, 2,-1, 0],
+            [ 0, 0, 0, 0, 0, 0, 0, 2,-1, 0]];
+
+function preload() {    
+    //carregar assets
+    this.load.atlas('sprites', 'assets/spritesheet.png', 'assets/spritesheet.json');
+    this.load.image('bullet', 'assets/bullet.png');
+    this.load.image('map', 'assets/towerDefense_tilesheet.png');
+    this.load.tilemapTiledJSON('tilemap', 'assets/base_tilemap2.json')
+>>>>>>> 4add58c (New changes)
 }
 
 //################################################################################################################
@@ -128,7 +165,11 @@ var EnemyStronger = new Phaser.Class({
 
     function Enemy (scene)
     {
+<<<<<<< HEAD
         Phaser.GameObjects.Image.call(this, scene, 0, 0, 'sprites', 'enemy2');
+=======
+        Phaser.GameObjects.Image.call(this, scene, 0, 0, 'sprites', 'enemy');
+>>>>>>> 4add58c (New changes)
 
         this.follower = { t: 0, vec: new Phaser.Math.Vector2() };
         this.hp = 0;
@@ -138,16 +179,26 @@ var EnemyStronger = new Phaser.Class({
     {
         //inicia o caminho
         this.follower.t = 0;
+<<<<<<< HEAD
         this.hp = 500 + inimigos_derrotados * (horda * 1.5)
+=======
+        this.hp = 100;
+>>>>>>> 4add58c (New changes)
         //pega x e y do ponto t
         path.getPoint(this.follower.t, this.follower.vec);
           //coloca o x e y do inimigo no momento anterior
         this.setPosition(this.follower.vec.x, this.follower.vec.y);            
     },
     receiveDamage: function(damage) {
+<<<<<<< HEAD
         this.hp -= damage;
 
         // se o hp cai para 0 desabilita inimigo
+=======
+        this.hp -= damage;           
+        
+        // if hp drops below 0 we deactivate this enemy
+>>>>>>> 4add58c (New changes)
         if(this.hp <= 0) {
             this.setActive(false);
             this.setVisible(false);      
@@ -171,7 +222,10 @@ var EnemyStronger = new Phaser.Class({
 
 });
 
+<<<<<<< HEAD
 //função utilizada pelas torres para detectar inimigos
+=======
+>>>>>>> 4add58c (New changes)
 function getEnemy(x, y, distance) {
     var enemyUnits = enemies.getChildren();
     for(var i = 0; i < enemyUnits.length; i++) {       
@@ -236,7 +290,11 @@ var TurretGunner = new Phaser.Class({
         var enemy = getEnemy(this.x, this.y, 200);
         if(enemy) {
             var angle = Phaser.Math.Angle.Between(this.x, this.y, enemy.x, enemy.y);
+<<<<<<< HEAD
             addBullet(this.x, this.y, angle, bulletsG);
+=======
+            addBullet(this.x, this.y, angle);
+>>>>>>> 4add58c (New changes)
             this.angle = (angle + Math.PI/2) * Phaser.Math.RAD_TO_DEG;
         }
     },
@@ -271,7 +329,11 @@ var TurretSniper = new Phaser.Class({
         var enemy = getEnemy(this.x, this.y, 500);
         if(enemy) {
             var angle = Phaser.Math.Angle.Between(this.x, this.y, enemy.x, enemy.y);
+<<<<<<< HEAD
             addBullet(this.x, this.y, angle, bulletsS);
+=======
+            addBullet(this.x, this.y, angle);
+>>>>>>> 4add58c (New changes)
             this.angle = (angle + Math.PI/2) * Phaser.Math.RAD_TO_DEG;
         }
     },
@@ -446,8 +508,11 @@ function create() {
 
     // cria as camadas do mapa
     map.createStaticLayer('Base', tileset);
+<<<<<<< HEAD
 
     // cria quadriculado do mapa
+=======
+>>>>>>> 4add58c (New changes)
     const graphics = this.add.graphics();
     drawLines(graphics);
 
@@ -461,6 +526,7 @@ function create() {
     path.lineTo(545,740);
     path.lineTo(545,900);
 
+<<<<<<< HEAD
     //inimigos
     enemies = this.physics.add.group({ classType: Enemy, runChildUpdate: true });
     enemiesS = this.physics.add.group({ classType: EnemyStronger, runChildUpdate: true });
@@ -476,12 +542,28 @@ function create() {
     bulletsS = this.physics.add.group({ classType: BulletS, runChildUpdate: true });
 
     //fisica entre as balas e os inimigos
+=======
+    //
+    //graphics.lineStyle(2, 0xffffff, 1);
+    //path.draw(graphics);
+
+    enemies = this.physics.add.group({ classType: Enemy, runChildUpdate: true });
+    enemiesS = this.physics.add.group({ classType: EnemyStronger, runChildUpdate: true });
+    
+    turrets = this.add.group({ classType: Turret, runChildUpdate: true });
+    turretsG = this.add.group({ classType: TurretGunner, runChildUpdate: true });
+    turretsS = this.add.group({ classType: TurretSniper, runChildUpdate: true });
+    
+    bullets = this.physics.add.group({ classType: Bullet, runChildUpdate: true });
+
+>>>>>>> 4add58c (New changes)
     this.physics.add.overlap(enemies, bullets, damageEnemy);
     this.physics.add.overlap(enemies, bulletsG, damageEnemy);
     this.physics.add.overlap(enemies, bulletsS, damageEnemy);
 
     //permite a colocação da torre
     this.input.on('pointerdown', placeTurret);
+<<<<<<< HEAD
 
     //começa o game
     inicio = document.querySelector("#iniciar");
@@ -496,6 +578,18 @@ function create() {
     
     }) 
     //inicia o game 
+=======
+    
+    //inicia o game
+    inicio = document.querySelector("#iniciar"); 
+    inicio.addEventListener("click", () =>{
+
+        this.scene.start();
+        this.nextEnemy = 0;
+    
+    })  
+    
+>>>>>>> 4add58c (New changes)
 }
 
 //funcao responsavel por aplicar dano das balas ao inimigo
@@ -526,6 +620,7 @@ function drawLines(graphics) {
 //Atualização contínua do game
 
 function update(time, delta) {  
+<<<<<<< HEAD
 
     //Verifica se o player ganhou e acaba o game
     if(inimigos_derrotados===150){
@@ -542,6 +637,15 @@ function update(time, delta) {
     if(start===0){
         //quando o proximo inimigo aparece
         if (time > this.nextEnemy)
+=======
+    //quando o proximo inimigo aparece
+    if (vidajogador===0){
+        this.scene.restart();
+        this.scene.stop();
+        resetaGame();
+    }
+    if (time > this.nextEnemy)
+>>>>>>> 4add58c (New changes)
     {
         if(inimigos_derrotados< 90){
             enemy = enemies.get();
@@ -557,6 +661,7 @@ function update(time, delta) {
             this.nextEnemy = time + 2000;
         }
     }
+<<<<<<< HEAD
     }
 
     //mostra em qual hora o player está e passa novos parametros pro calculo do dano
@@ -572,6 +677,16 @@ function update(time, delta) {
     } else if (inimigos_derrotados >= 120 && inimigos_derrotados < 150) {
         document.getElementById("horda").innerHTML = "Horda 5";
         horda = 4;
+=======
+    if (inimigos_derrotados >= 20 && inimigos_derrotados < 40){
+        document.getElementById("horda").innerHTML = "Horda 2";
+    } else if (inimigos_derrotados >= 40 && inimigos_derrotados < 60) {
+        document.getElementById("horda").innerHTML = "Horda 3";
+    } else if (inimigos_derrotados >= 60 && inimigos_derrotados < 80) {
+        document.getElementById("horda").innerHTML = "Horda 4";
+    } else if (inimigos_derrotados >= 80 && inimigos_derrotados < 100) {
+        document.getElementById("horda").innerHTML = "Horda 5";
+>>>>>>> 4add58c (New changes)
     }
 
 }
@@ -618,15 +733,21 @@ function addBullet(x, y, angle, tbullets) {
     }
 }
 
+<<<<<<< HEAD
 //################################################################################################################
 //Funções relativas a mudanças no html
 
 //seleciona torre "Turret"
+=======
+//funcoes relativas ao html
+
+>>>>>>> 4add58c (New changes)
 botaot = document.getElementById("botaot");
 botaot.addEventListener("click", () => {
     tipodeturret = 0;
     turretpreco = 10;
     document.getElementById("turretimg").src = "assets/towerDefense_tile203.png";
+<<<<<<< HEAD
     document.getElementById("preco").innerHTML = "Preço: 10";
     document.getElementById("dano").innerHTML = "Dano: 20-50/s"
 })
@@ -652,25 +773,50 @@ botaots.addEventListener("click", () => {
 })
 
 //atualiza o crédito do player (referente a compra de turret)
+=======
+})
+
+botaotg = document.getElementById("botaotg");
+botaotg.addEventListener("click", () => {
+    tipodeturret = 1;
+    turretpreco = 10;
+    document.getElementById("turretimg").src = "assets/towerDefense_tile250.png";
+})
+
+botaots = document.getElementById("botaots");
+botaots.addEventListener("click", () => {
+    tipodeturret = 2;
+    turretpreco = 10;
+    document.getElementById("turretimg").src = "assets/towerDefense_tile249.png";
+})
+
+>>>>>>> 4add58c (New changes)
 function atualizeCredito() {
     credito -= turretpreco;
     element = document.getElementById("credito");
     element.innerHTML = `${credito}`;
 }
 
+<<<<<<< HEAD
 //atualiza crédito do player (referente a quando o inimigo morre)
+=======
+>>>>>>> 4add58c (New changes)
 function putCredito() {
     credito += 2;
     element = document.getElementById("credito");
     element.innerHTML = `${credito}`;
 }
 
+<<<<<<< HEAD
 //atualiza vida do jogador de acordo com o dano recebido
+=======
+>>>>>>> 4add58c (New changes)
 function atualizeVida() {
     vidajogador--;
     document.getElementById("vida").innerHTML = vidajogador;
 }
 
+<<<<<<< HEAD
 //reinicia stats e visual do html
 function resetaGame(){
     start = 1;
@@ -685,3 +831,11 @@ function resetaGame(){
 function ganhou(){
     document.getElementById("content").innerHTML = '<p style="font-size: 50px;">Parabéns você ganhou</p>';
 }
+=======
+function resetaGame(){
+    vidajogador=3;
+    credito=25;
+    document.getElementById("credito").innerHTML = `${credito}`;;
+    document.getElementById("vida").innerHTML = vidajogador;
+}
+>>>>>>> 4add58c (New changes)

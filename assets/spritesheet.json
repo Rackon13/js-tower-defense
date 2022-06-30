@@ -20,7 +20,11 @@
 				"h": 64
 			}
 		},
+<<<<<<< HEAD
 		"enemy2": {
+=======
+		"turret": {
+>>>>>>> 4add58c (New changes)
 			"frame": {
 				"x": 1,
 				"y": 67,
@@ -40,7 +44,11 @@
 				"h": 64
 			}
 		},
+<<<<<<< HEAD
 		"turret": {
+=======
+		"turretS": {
+>>>>>>> 4add58c (New changes)
 			"frame": {
 				"x": 1,
 				"y": 133,
@@ -60,6 +68,7 @@
 				"h": 64
 			}
 		},
+<<<<<<< HEAD
 		"turretS": {
 			"frame": {
 				"x": 1,
@@ -84,6 +93,12 @@
 			"frame": {
 				"x": 1,
 				"y": 265,
+=======
+		"turretG": {
+			"frame": {
+				"x": 1,
+				"y": 199,
+>>>>>>> 4add58c (New changes)
 				"w": 64,
 				"h": 64
 			},
@@ -108,8 +123,16 @@
 		"format": "RGBA8888",
 		"size": {
 			"w": 66,
+<<<<<<< HEAD
 			"h": 330
 		},
 		"scale": "1"
 	}
 }
+=======
+			"h": 264
+		},
+		"scale": "1"
+	}
+}
+>>>>>>> 4add58c (New changes)
