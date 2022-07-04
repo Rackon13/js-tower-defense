@@ -20,7 +20,7 @@
 				"h": 64
 			}
 		},
-		"turret": {
+		"enemy2": {
 			"frame": {
 				"x": 1,
 				"y": 67,
@@ -40,7 +40,7 @@
 				"h": 64
 			}
 		},
-		"turretS": {
+		"turret": {
 			"frame": {
 				"x": 1,
 				"y": 133,
@@ -60,10 +60,30 @@
 				"h": 64
 			}
 		},
-		"turretG": {
+		"turretS": {
 			"frame": {
 				"x": 1,
 				"y": 199,
+				"w": 64,
+				"h": 64
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 64,
+				"h": 64
+			},
+			"sourceSize": {
+				"w": 64,
+				"h": 64
+			}
+		},
+		"turretG": {
+			"frame": {
+				"x": 1,
+				"y": 265,
 				"w": 64,
 				"h": 64
 			},
@@ -88,7 +108,7 @@
 		"format": "RGBA8888",
 		"size": {
 			"w": 66,
-			"h": 264
+			"h": 330
 		},
 		"scale": "1"
 	}
