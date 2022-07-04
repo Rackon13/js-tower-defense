@@ -21,10 +21,14 @@
 			}
 		},
 <<<<<<< HEAD
+<<<<<<< HEAD
 		"enemy2": {
 =======
 		"turret": {
 >>>>>>> 4add58c (New changes)
+=======
+		"enemy2": {
+>>>>>>> 1f1ae57 (Last changes)
 			"frame": {
 				"x": 1,
 				"y": 67,
@@ -45,10 +49,14 @@
 			}
 		},
 <<<<<<< HEAD
+<<<<<<< HEAD
 		"turret": {
 =======
 		"turretS": {
 >>>>>>> 4add58c (New changes)
+=======
+		"turret": {
+>>>>>>> 1f1ae57 (Last changes)
 			"frame": {
 				"x": 1,
 				"y": 133,
@@ -68,6 +76,7 @@
 				"h": 64
 			}
 		},
+<<<<<<< HEAD
 <<<<<<< HEAD
 		"turretS": {
 			"frame": {
@@ -95,10 +104,33 @@
 				"y": 265,
 =======
 		"turretG": {
+=======
+		"turretS": {
+>>>>>>> 1f1ae57 (Last changes)
 			"frame": {
 				"x": 1,
 				"y": 199,
 >>>>>>> 4add58c (New changes)
+				"w": 64,
+				"h": 64
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 64,
+				"h": 64
+			},
+			"sourceSize": {
+				"w": 64,
+				"h": 64
+			}
+		},
+		"turretG": {
+			"frame": {
+				"x": 1,
+				"y": 265,
 				"w": 64,
 				"h": 64
 			},
@@ -124,6 +156,7 @@
 		"size": {
 			"w": 66,
 <<<<<<< HEAD
+<<<<<<< HEAD
 			"h": 330
 		},
 		"scale": "1"
@@ -136,3 +169,10 @@
 	}
 }
 >>>>>>> 4add58c (New changes)
+=======
+			"h": 330
+		},
+		"scale": "1"
+	}
+}
+>>>>>>> 1f1ae57 (Last changes)
