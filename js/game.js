@@ -489,7 +489,6 @@ function create() {
 
         if (start!==0){
             this.nextEnemy = 0;
-            resetaGame();
             start = 0;
         }
 
