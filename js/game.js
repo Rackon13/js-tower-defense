@@ -175,7 +175,9 @@ var EnemyStronger = new Phaser.Class({
 function getEnemy(x, y, distance) {
     var enemyUnits = enemies.getChildren();
     var enemySUnits = enemiesS.getChildren();
-    enemyUnits.push(enemySUnits);
+    enemySUnits.forEach(element => {
+        enemyUnits.push(element);
+    });
     for(var i = 0; i < enemyUnits.length; i++) {       
         if(enemyUnits[i].active && Phaser.Math.Distance.Between(x, y, enemyUnits[i].x, enemyUnits[i].y) < distance)
             return enemyUnits[i];
