@@ -6,16 +6,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="js/phaser.min.js"></script>
-    <script src="js/game.js"></script>
     <style>
-        html,
+        html{
+            background-color: black;
+            margin: 0;
+            padding: 20px;
+        }
+
         body {
             margin: 0;
-            padding: 0;
+            padding: 20px;
+        }
+
+        #content {
+            width: 500px;
         }
     </style>
+    <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
-    <div id="content" style="display: block; width: 100%; text-align: center;"></div>
+    <div style="display: flex;">
+        <div style="width: 700px; text-align: center;">
+            <div>
+                <Button class="btn" id="iniciar" >Start</Button>
+                <p>Créditos: </p>
+                <p id="credito">25</p>
+                <p>Vida do jogador:</p>
+                <p id="vida">5</p>
+            </div>
+
+            <p id="horda">Horda 1</p>
+            <p> </p>
+            <div class="loja">
+                <button id="botaot" class="btn botao-loja">Turret</button>
+                <button id="botaotg" class="btn botao-loja">Gunner Turret</button>
+                <button id="botaots" class="btn botao-loja">Sniper Turret</button>
+            </div>
+            <img class="is-animating" id="turretimg" src="assets/towerDefense_tile203.png">
+            <p id="preco">Preço: 10</p>
+            <p id="dano">Dano: 20-50/s</p>
+        </div>
+        <div id="content" style="display: block; width: 700px; text-align: center; "></div>
+    </div>
+    <script src="js/game.js"></script>
 </body>
 </html>
